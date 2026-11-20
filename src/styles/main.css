@@ -1,0 +1,2509 @@
+/* ==========================================================================
+   THE EDUCATORS PRIME CAMPUS BAIGPUR — PREMIUM DESIGN SYSTEM & MASTER STYLES
+   A Project of Beaconhouse | Established Legacy
+   ========================================================================== */
+
+:root {
+  /* Brand Color Tokens */
+  --te-navy-dark: #07172C;
+  --te-navy-primary: #0B2545;
+  --te-navy-secondary: #133E70;
+  --te-navy-surface: #0E2A50;
+  --te-blue-accent: #1D4ED8;
+  --te-blue-soft: #EEF4FF;
+  --te-blue-glow: rgba(29, 78, 216, 0.28);
+  
+  --te-gold: #C59B27;
+  --te-gold-light: #FBF4DE;
+  --te-gold-hover: #D4AF37;
+  --te-gold-glow: rgba(197, 155, 39, 0.32);
+  
+  --te-green-crest: #00966C;
+  --te-green-soft: #ECFDF5;
+  --te-green-glow: rgba(0, 150, 108, 0.3);
+  
+  --te-bg-subtle: #F8FAFC;
+  --te-bg-card: #FFFFFF;
+  --te-border: #E2E8F0;
+  --te-border-strong: #CBD5E1;
+  --te-border-dark: rgba(255, 255, 255, 0.12);
+  
+  --te-text-dark: #0F172A;
+  --te-text-muted: #475569;
+  --te-text-light: #94A3B8;
+  
+  /* Advanced Shadows */
+  --te-shadow-sm: 0 2px 8px rgba(11, 37, 69, 0.05);
+  --te-shadow-md: 0 8px 24px rgba(11, 37, 69, 0.08);
+  --te-shadow-lg: 0 16px 40px rgba(11, 37, 69, 0.12);
+  --te-shadow-hover: 0 22px 50px rgba(11, 37, 69, 0.16);
+  --te-shadow-gold: 0 10px 30px rgba(197, 155, 39, 0.28);
+  --te-shadow-dark-card: 0 14px 36px rgba(0, 0, 0, 0.35);
+
+  /* Radius */
+  --te-radius-sm: 8px;
+  --te-radius-md: 14px;
+  --te-radius-lg: 20px;
+  --te-radius-xl: 28px;
+  --te-radius-pill: 9999px;
+
+  /* Typography */
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-urdu: 'Noto Nastaliq Urdu', serif;
+
+  /* Transitions */
+  --transition-fast: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Global Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root,
+html,
+body {
+  scroll-behavior: auto !important;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--te-text-dark);
+  background-color: #FFFFFF;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--te-navy-dark);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--te-text-muted);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   TOP UTILITY BAR
+   ========================================================================== */
+.te-topbar {
+  background-color: var(--te-navy-dark);
+  color: #E2E8F0;
+  font-size: 0.8rem;
+  padding: 0.28rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.te-topbar a {
+  color: #CBD5E1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.te-topbar a:hover {
+  color: var(--te-gold-hover);
+}
+
+.te-topbar-badge {
+  background: linear-gradient(135deg, var(--te-gold), #B3881E);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 0.18rem 0.65rem;
+  border-radius: var(--te-radius-pill);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  box-shadow: 0 2px 10px rgba(197, 155, 39, 0.3);
+}
+
+/* ==========================================================================
+   MAIN NAVBAR — COMPACT, SLIM, SINGLE-LINE DESKTOP LAYOUT
+   ========================================================================== */
+.te-navbar {
+  background-color: #FFFFFF;
+  transition: all var(--transition-normal);
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--te-border);
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+.te-navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 4px 18px rgba(11, 37, 69, 0.08);
+  padding: 0.28rem 0;
+}
+
+.te-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  flex-shrink: 0;
+}
+
+.te-brand-logo {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  transition: transform var(--transition-fast), height var(--transition-fast);
+  filter: drop-shadow(0 3px 8px rgba(11, 37, 69, 0.15));
+}
+
+.te-navbar.scrolled .te-brand-logo {
+  height: 52px;
+}
+
+.te-brand-wrap:hover .te-brand-logo {
+  transform: scale(1.04);
+}
+
+.te-brand-title {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--te-navy-dark);
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.te-brand-subtitle {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--te-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: block;
+  line-height: 1.1;
+  margin-top: 1px;
+}
+
+.te-brand-campus {
+  font-size: 0.68rem;
+  color: var(--te-text-muted);
+  display: block;
+  line-height: 1.1;
+}
+
+/* Nav Links — Guaranteed 1 Line on Desktop */
+.te-desktop-nav-group {
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+}
+
+.te-nav-item {
+  position: relative;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--te-navy-dark);
+  padding: 0.38rem 0.62rem;
+  border-radius: var(--te-radius-sm);
+  transition: color var(--transition-fast), background var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap !important;
+  text-decoration: none;
+}
+
+.te-nav-item:hover {
+  color: var(--te-blue-accent);
+  background-color: var(--te-blue-soft);
+}
+
+.te-nav-item.active {
+  color: var(--te-navy-dark);
+  background-color: #F1F5F9;
+  font-weight: 700;
+}
+
+.te-nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.62rem;
+  right: 0.62rem;
+  height: 2px;
+  background-color: var(--te-gold);
+  border-radius: 2px;
+}
+
+/* Nav CTA Button — Compact & Crisp */
+.te-btn-nav {
+  padding: 0.42rem 1.1rem !important;
+  font-size: 0.86rem !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+  border-radius: var(--te-radius-md) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+}
+
+/* ==========================================================================
+   PREMIUM BUTTON SYSTEM (WITH HOVER LIFTS & SHINE SWEEPS)
+   ========================================================================== */
+.btn-te-primary {
+  position: relative;
+  background: linear-gradient(135deg, var(--te-navy-primary) 0%, var(--te-navy-secondary) 100%);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.65rem;
+  border-radius: var(--te-radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 16px rgba(11, 37, 69, 0.25);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-te-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-25deg);
+  transition: left 0.65s ease;
+  z-index: -1;
+}
+
+.btn-te-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(11, 37, 69, 0.38);
+  color: #FFFFFF !important;
+}
+
+.btn-te-primary:hover::after {
+  left: 150%;
+}
+
+.btn-te-primary svg {
+  transition: transform var(--transition-fast);
+}
+
+.btn-te-primary:hover svg {
+  transform: translateX(3px);
+}
+
+/* Gold CTA Button */
+.btn-te-gold {
+  position: relative;
+  background: linear-gradient(135deg, var(--te-gold) 0%, #AF8313 100%);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.65rem;
+  border-radius: var(--te-radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: var(--te-shadow-gold);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-te-gold::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-25deg);
+  transition: left 0.65s ease;
+  z-index: -1;
+}
+
+.btn-te-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(197, 155, 39, 0.42);
+  filter: brightness(1.04);
+  color: #FFFFFF !important;
+}
+
+.btn-te-gold:hover::after {
+  left: 150%;
+}
+
+.btn-te-gold svg {
+  transition: transform var(--transition-fast);
+}
+
+.btn-te-gold:hover svg {
+  transform: translateX(3px);
+}
+
+/* Outline Buttons */
+.btn-te-outline {
+  background: transparent;
+  color: var(--te-navy-primary) !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.72rem 1.5rem;
+  border-radius: var(--te-radius-md);
+  border: 2px solid var(--te-navy-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.btn-te-outline:hover {
+  background-color: var(--te-navy-primary);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: var(--te-shadow-md);
+}
+
+.btn-te-outline svg {
+  transition: transform var(--transition-fast);
+}
+
+.btn-te-outline:hover svg {
+  transform: translateX(3px);
+}
+
+/* Frosted Glass White Outline */
+.btn-te-outline-white {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.72rem 1.55rem;
+  border-radius: var(--te-radius-md);
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-normal);
+}
+
+.btn-te-outline-white:hover {
+  background-color: #FFFFFF;
+  color: var(--te-navy-dark) !important;
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.btn-te-outline-white svg {
+  transition: transform var(--transition-fast);
+}
+
+.btn-te-outline-white:hover svg {
+  transform: translateX(3px);
+}
+
+/* WhatsApp Pulse Button */
+.btn-te-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #1EBE5D 100%);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+  transition: all var(--transition-normal);
+}
+
+.btn-te-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.5);
+  filter: brightness(1.05);
+}
+
+/* ==========================================================================
+   UPGRADED SECTION HEADINGS & DIVIDERS
+   ========================================================================== */
+.te-section-header {
+  margin-bottom: 3.2rem;
+  position: relative;
+}
+
+.te-eyebrow-wrap {
+  margin-bottom: 0.9rem;
+}
+
+.te-badge-pro {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.05rem;
+  border-radius: var(--te-radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.te-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  animation: dotPulse 2s infinite ease-in-out;
+}
+
+@keyframes dotPulse {
+  0%, 100% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+.te-badge-pro.blue {
+  background-color: var(--te-blue-soft);
+  color: var(--te-navy-primary);
+  border: 1px solid rgba(29, 78, 216, 0.18);
+}
+.te-badge-pro.blue .te-badge-dot {
+  background-color: var(--te-blue-accent);
+}
+
+.te-badge-pro.gold {
+  background-color: var(--te-gold-light);
+  color: #8D6B12;
+  border: 1px solid rgba(197, 155, 39, 0.28);
+}
+.te-badge-pro.gold .te-badge-dot {
+  background-color: var(--te-gold);
+}
+
+.te-badge-pro.green {
+  background-color: var(--te-green-soft);
+  color: var(--te-green-crest);
+  border: 1px solid rgba(0, 150, 108, 0.22);
+}
+.te-badge-pro.green .te-badge-dot {
+  background-color: var(--te-green-crest);
+}
+
+.te-badge-pro.on-dark {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #F8FAFC;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.te-section-title-pro {
+  font-size: 2.45rem;
+  font-weight: 800;
+  color: var(--te-navy-dark);
+  line-height: 1.22;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.025em;
+}
+
+.te-section-title-pro .accent-gold {
+  background: linear-gradient(135deg, var(--te-gold) 0%, #E6B743 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.te-section-desc-pro {
+  font-size: 1.08rem;
+  color: var(--te-text-muted);
+  max-width: 680px;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.te-section-header.text-center .te-section-desc-pro {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Luxury Dual-Tone Divider */
+.te-luxury-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 140px;
+  margin-top: 1.1rem;
+}
+
+.te-luxury-divider .divider-line {
+  flex-grow: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--te-gold));
+  border-radius: 2px;
+}
+
+.te-luxury-divider .divider-line.right {
+  background: linear-gradient(90deg, var(--te-gold), transparent);
+}
+
+.te-luxury-divider .divider-diamond {
+  width: 8px;
+  height: 8px;
+  background-color: var(--te-gold);
+  transform: rotate(45deg);
+  border-radius: 1px;
+}
+
+/* ==========================================================================
+   SELECTIVE AMBIENT RAINBOW AURA (SLOW & ELEGANT)
+   ========================================================================== */
+@keyframes auraDrift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.te-rainbow-aura-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.te-rainbow-aura-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  background: linear-gradient(
+    135deg,
+    rgba(29, 78, 216, 0.28),
+    rgba(197, 155, 39, 0.32),
+    rgba(0, 150, 108, 0.25),
+    rgba(139, 92, 246, 0.22),
+    rgba(29, 78, 216, 0.28)
+  );
+  background-size: 300% 300%;
+  animation: auraDrift 11s ease infinite;
+  border-radius: inherit;
+  filter: blur(28px);
+  z-index: -1;
+  opacity: 0.85;
+  pointer-events: none;
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+.te-rainbow-aura-wrap:hover::before {
+  opacity: 1;
+  filter: blur(32px);
+}
+
+/* ==========================================================================
+   FACILITIES CONTINUOUS ANIMATED RAINBOW SHADE SECTION (IMAGE 3 REDESIGN)
+   ========================================================================== */
+.te-facilities-rainbow-section {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    #FFF1F2 0%,
+    #FFF8E7 16%,
+    #E8F8F5 32%,
+    #EEF2FF 48%,
+    #FDF2F8 64%,
+    #F0FDF4 80%,
+    #FFF1F2 100%
+  );
+  background-size: 350% 350%;
+  animation: rainbowFlowBg 14s ease infinite;
+  overflow: hidden;
+  padding: 5.5rem 0;
+}
+
+@keyframes rainbowFlowBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Ambient Floating Luminous Rainbow Orbs */
+.te-facilities-rainbow-section::before {
+  content: '';
+  position: absolute;
+  top: -15%;
+  left: 5%;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(254, 205, 211, 0.55) 0%, rgba(254, 240, 138, 0.4) 45%, transparent 70%);
+  filter: blur(65px);
+  animation: floatRainbowOrb1 16s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.te-facilities-rainbow-section::after {
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  right: 5%;
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(187, 247, 208, 0.5) 0%, rgba(191, 219, 254, 0.55) 45%, transparent 70%);
+  filter: blur(75px);
+  animation: floatRainbowOrb2 18s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes floatRainbowOrb1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, 40px) scale(1.08); }
+  100% { transform: translate(-30px, 70px) scale(0.95); }
+}
+
+@keyframes floatRainbowOrb2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-40px, -30px) scale(1.06); }
+  100% { transform: translate(30px, -50px) scale(0.94); }
+}
+
+/* Glassmorphic Facility Cards in Rainbow Section */
+.te-facilities-rainbow-section .te-facility-card-pro {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 30px rgba(11, 37, 69, 0.07), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+.te-facilities-rainbow-section .te-facility-card-pro:hover {
+  background: rgba(255, 255, 255, 0.98);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 42px rgba(11, 37, 69, 0.12), 0 0 22px rgba(214, 168, 76, 0.22);
+  border-color: rgba(214, 168, 76, 0.45);
+}
+
+/* ==========================================================================
+   SECTION A: INFORMATION / FACILITIES CARDS (COMPLETE REDESIGN)
+   ========================================================================== */
+.te-facility-card-pro {
+  position: relative;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F9FBFC 100%);
+  border: 1px solid var(--te-border);
+  border-radius: var(--te-radius-xl);
+  padding: 2.2rem;
+  height: 100%;
+  box-shadow: var(--te-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.te-facility-card-pro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--te-navy-primary), var(--te-blue-accent));
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.te-facility-card-pro:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--te-shadow-hover);
+  border-color: rgba(29, 78, 216, 0.35);
+}
+
+.te-facility-card-pro:hover::before {
+  opacity: 1;
+}
+
+/* Top Icon & Chip Row */
+.te-facility-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.te-facility-icon-pro {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--te-radius-lg);
+  background: linear-gradient(135deg, var(--te-blue-soft) 0%, #DCE8FD 100%);
+  color: var(--te-blue-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(29, 78, 216, 0.15);
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.12);
+  transition: transform var(--transition-normal), background var(--transition-normal), color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.te-facility-card-pro:hover .te-facility-icon-pro {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, var(--te-navy-primary) 0%, var(--te-blue-accent) 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(29, 78, 216, 0.28);
+}
+
+.te-facility-chip {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--te-radius-pill);
+  background-color: var(--te-bg-subtle);
+  color: var(--te-text-muted);
+  border: 1px solid var(--te-border);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.te-facility-title-pro {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--te-navy-dark);
+  margin-bottom: 0.75rem;
+  transition: color var(--transition-fast);
+}
+
+.te-facility-card-pro:hover .te-facility-title-pro {
+  color: var(--te-blue-accent);
+}
+
+.te-facility-desc-pro {
+  font-size: 0.95rem;
+  color: var(--te-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.te-facility-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--te-border);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--te-navy-primary);
+}
+
+.te-facility-action-row svg {
+  transition: transform var(--transition-fast);
+}
+
+.te-facility-card-pro:hover .te-facility-action-row svg {
+  transform: translateX(5px);
+  color: var(--te-blue-accent);
+}
+
+/* ==========================================================================
+   SECTION B: DARK BLUE FEATURE SECTION ("WHY CHOOSE US" COMPLETE REDESIGN)
+   ========================================================================== */
+.te-dark-feature-section {
+  position: relative;
+  background: linear-gradient(145deg, #051329 0%, #081C38 45%, #0B2545 100%);
+  color: #FFFFFF;
+  padding: 6.5rem 0;
+  overflow: hidden;
+}
+
+/* Layered Ambient Radial Glows */
+.te-dark-feature-section::before {
+  content: '';
+  position: absolute;
+  top: -15%;
+  left: 10%;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(29, 78, 216, 0.22) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.te-dark-feature-section::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  right: 5%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(197, 155, 39, 0.16) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   PROPER ANIMATED RAINBOW GLOW FOR FEATURE CARDS (EXACT CARD SIZE)
+   ========================================================================== */
+@keyframes teRainbowGlowShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes teIconPulseGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px #FFFFFF) drop-shadow(0 0 12px currentColor);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px #FFFFFF) drop-shadow(0 0 22px currentColor);
+  }
+}
+
+/* Card Wrap containing strictly perimeter-sized Rainbow Glow */
+.te-rainbow-card-wrap {
+  position: relative;
+  height: 100%;
+  border-radius: 22px;
+  z-index: 1;
+  transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* 1. Ambient Rainbow Glow strictly in card's size behind the card */
+.te-rainbow-card-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 26px;
+  background: linear-gradient(
+    135deg,
+    #ff0055 0%,
+    #ff5500 14%,
+    #ffb700 28%,
+    #00e676 44%,
+    #00d4ff 60%,
+    #7c4dff 76%,
+    #ff00aa 90%,
+    #ff0055 100%
+  );
+  background-size: 300% 300%;
+  animation: teRainbowGlowShift 6s ease infinite;
+  filter: blur(14px);
+  opacity: 0.85;
+  z-index: -2;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* 2. Crisp Rainbow Glowing Border directly framing the card perimeter */
+.te-rainbow-card-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border-radius: 23.5px;
+  background: linear-gradient(
+    135deg,
+    #ff0055 0%,
+    #ff5500 14%,
+    #ffb700 28%,
+    #00e676 44%,
+    #00d4ff 60%,
+    #7c4dff 76%,
+    #ff00aa 90%,
+    #ff0055 100%
+  );
+  background-size: 300% 300%;
+  animation: teRainbowGlowShift 6s ease infinite;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.95;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Hover: card lifts and rainbow glow intensifies */
+.te-rainbow-card-wrap:hover {
+  transform: translateY(-8px);
+}
+
+.te-rainbow-card-wrap:hover::before {
+  inset: -8px;
+  filter: blur(22px);
+  opacity: 1;
+  animation-duration: 3.5s;
+}
+
+.te-rainbow-card-wrap:hover::after {
+  inset: -2px;
+  opacity: 1;
+  animation-duration: 3.5s;
+}
+
+/* Individual card phase offsets for fluid wave effect */
+.te-rainbow-card-wrap.card-delay-1::before,
+.te-rainbow-card-wrap.card-delay-1::after { animation-delay: 0s; }
+.te-rainbow-card-wrap.card-delay-2::before,
+.te-rainbow-card-wrap.card-delay-2::after { animation-delay: -1s; }
+.te-rainbow-card-wrap.card-delay-3::before,
+.te-rainbow-card-wrap.card-delay-3::after { animation-delay: -2s; }
+.te-rainbow-card-wrap.card-delay-4::before,
+.te-rainbow-card-wrap.card-delay-4::after { animation-delay: -3s; }
+.te-rainbow-card-wrap.card-delay-5::before,
+.te-rainbow-card-wrap.card-delay-5::after { animation-delay: -4s; }
+.te-rainbow-card-wrap.card-delay-6::before,
+.te-rainbow-card-wrap.card-delay-6::after { animation-delay: -5s; }
+
+/* Dark Card Body (Solid Navy Backdrop for maximum readability) */
+.te-dark-card-pro {
+  position: relative;
+  background: #0B1930;
+  border-radius: 22px;
+  padding: 2.3rem 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
+  transition: background 0.35s ease;
+}
+
+.te-dark-card-pro:hover {
+  background: #0E2244;
+}
+
+/* Top-Right Pill Badge (FLAGSHIP / Category) */
+.te-dark-card-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.te-dark-card-badge.gold {
+  background: linear-gradient(135deg, #D49B10, #B87B0A);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(200, 136, 20, 0.5);
+}
+
+.te-dark-card-badge.blue {
+  background: rgba(37, 99, 235, 0.25);
+  color: #60A5FA;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.te-dark-card-badge.green {
+  background: rgba(16, 185, 129, 0.25);
+  color: #6EE7B7;
+  border: 1px solid rgba(110, 231, 183, 0.4);
+}
+
+.te-dark-card-badge.purple {
+  background: rgba(139, 92, 246, 0.25);
+  color: #C4B5FD;
+  border: 1px solid rgba(196, 181, 253, 0.4);
+}
+
+.te-dark-card-badge.cyan {
+  background: rgba(6, 182, 212, 0.25);
+  color: #67E8F9;
+  border: 1px solid rgba(103, 232, 249, 0.4);
+}
+
+.te-dark-card-badge.rose {
+  background: rgba(244, 63, 94, 0.25);
+  color: #FDA4AF;
+  border: 1px solid rgba(253, 164, 175, 0.4);
+}
+
+/* Icon Squircles - default vibrant state with color-matched ambient glow */
+.te-dark-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.35rem;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+}
+
+.te-dark-icon-wrap.gold {
+  background: linear-gradient(135deg, #FF9900 0%, #D97706 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
+}
+
+.te-dark-icon-wrap.blue {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+}
+
+.te-dark-icon-wrap.green {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+}
+
+.te-dark-icon-wrap.purple {
+  background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.45);
+}
+
+.te-dark-icon-wrap.cyan {
+  background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.45);
+}
+
+.te-dark-icon-wrap.rose {
+  background: linear-gradient(135deg, #F43F5E 0%, #E11D48 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(244, 63, 94, 0.45);
+}
+
+/* ==========================================================================
+   ICON GLOW ON CURSOR HOVER (AS REQUESTED)
+   ========================================================================== */
+.te-dark-card-pro:hover .te-dark-icon-wrap {
+  transform: scale(1.15) translateY(-3px);
+}
+
+.te-dark-card-pro:hover .te-dark-icon-wrap.gold {
+  box-shadow: 
+    0 0 25px #FFB300,
+    0 0 50px rgba(255, 179, 0, 0.95),
+    0 0 75px rgba(255, 152, 0, 0.65),
+    inset 0 0 14px rgba(255, 255, 255, 0.8);
+}
+
+.te-dark-card-pro:hover .te-dark-icon-wrap.blue {
+  box-shadow: 
+    0 0 25px #38BDF8,
+    0 0 50px rgba(37, 99, 235, 0.95),
+    0 0 75px rgba(56, 189, 248, 0.65),
+    inset 0 0 14px rgba(255, 255, 255, 0.8);
+}
+
+.te-dark-card-pro:hover .te-dark-icon-wrap.green {
+  box-shadow: 
+    0 0 25px #34D399,
+    0 0 50px rgba(16, 185, 129, 0.95),
+    0 0 75px rgba(52, 211, 153, 0.65),
+    inset 0 0 14px rgba(255, 255, 255, 0.8);
+}
+
+.te-dark-card-pro:hover .te-dark-icon-wrap.purple {
+  box-shadow: 
+    0 0 25px #C084FC,
+    0 0 50px rgba(139, 92, 246, 0.95),
+    0 0 75px rgba(192, 132, 252, 0.65),
+    inset 0 0 14px rgba(255, 255, 255, 0.8);
+}
+
+.te-dark-card-pro:hover .te-dark-icon-wrap.cyan {
+  box-shadow: 
+    0 0 25px #22D3EE,
+    0 0 50px rgba(6, 182, 212, 0.95),
+    0 0 75px rgba(34, 211, 238, 0.65),
+    inset 0 0 14px rgba(255, 255, 255, 0.8);
+}
+
+.te-dark-card-pro:hover .te-dark-icon-wrap.rose {
+  box-shadow: 
+    0 0 25px #FB7185,
+    0 0 50px rgba(244, 63, 94, 0.95),
+    0 0 75px rgba(251, 113, 133, 0.65),
+    inset 0 0 14px rgba(255, 255, 255, 0.8);
+}
+
+.te-dark-card-pro:hover .te-dark-icon-wrap svg {
+  animation: teIconPulseGlow 2s infinite ease-in-out;
+  transform: scale(1.08);
+}
+
+.te-dark-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.015em;
+}
+
+.te-dark-card-desc {
+  font-size: 0.95rem;
+  color: #CBD5E1;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   SECTION C: CIRCULARS / NOTICES CARDS (COMPLETE REDESIGN)
+   ========================================================================== */
+.te-circular-card-pro {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid var(--te-border);
+  border-radius: var(--te-radius-xl);
+  padding: 2.2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--te-shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.te-circular-card-pro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--te-gold) 0%, var(--te-navy-primary) 100%);
+  transition: width var(--transition-fast);
+}
+
+.te-circular-card-pro:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--te-shadow-hover);
+  border-color: rgba(197, 155, 39, 0.4);
+}
+
+.te-circular-card-pro:hover::before {
+  width: 7px;
+}
+
+.te-circular-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+
+.te-circular-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--te-radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.te-circular-badge.admissions {
+  background-color: var(--te-gold-light);
+  color: #8D6B12;
+  border: 1px solid rgba(197, 155, 39, 0.3);
+}
+
+.te-circular-badge.fee {
+  background-color: var(--te-green-soft);
+  color: var(--te-green-crest);
+  border: 1px solid rgba(0, 150, 108, 0.25);
+}
+
+.te-circular-badge.general {
+  background-color: var(--te-blue-soft);
+  color: var(--te-navy-primary);
+  border: 1px solid rgba(29, 78, 216, 0.2);
+}
+
+.te-circular-date-chip {
+  font-size: 0.82rem;
+  color: var(--te-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+.te-circular-title-pro {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--te-navy-dark);
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+  transition: color var(--transition-fast);
+}
+
+.te-circular-card-pro:hover .te-circular-title-pro {
+  color: var(--te-blue-accent);
+}
+
+.te-circular-body-pro {
+  font-size: 0.95rem;
+  color: var(--te-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+/* Styled Urdu Notice Box */
+.te-circular-urdu-box {
+  background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%);
+  border: 1px solid var(--te-border);
+  border-radius: var(--te-radius-md);
+  padding: 0.85rem 1.15rem;
+  margin-bottom: 1.35rem;
+  position: relative;
+}
+
+.te-circular-urdu-text {
+  font-family: var(--font-urdu), 'Jameel Noori Nastaleeq', 'Plus Jakarta Sans', serif;
+  direction: rtl;
+  text-align: right;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--te-navy-dark);
+  margin: 0;
+}
+
+.te-circular-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--te-border);
+}
+
+.te-circular-cta-text {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--te-navy-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color var(--transition-fast);
+}
+
+.te-circular-card-pro:hover .te-circular-cta-text {
+  color: var(--te-blue-accent);
+}
+
+.te-circular-card-pro:hover .te-circular-cta-text svg {
+  transform: translateX(5px);
+}
+
+.te-circular-cta-text svg {
+  transition: transform var(--transition-fast);
+}
+
+/* ==========================================================================
+   NEON GLASS ADMISSIONS SECTION (COMPACT & FIT TO SCREEN)
+   ========================================================================== */
+.te-neon-admissions-section {
+  position: relative;
+  background-color: #07152E;
+  background-image: 
+    linear-gradient(135deg, rgba(7, 21, 46, 0.94) 0%, rgba(11, 37, 80, 0.91) 60%, rgba(15, 23, 42, 0.96) 100%),
+    url('/assets/images/school-entrance-building.webp');
+  background-size: cover;
+  background-position: center;
+  color: #FFFFFF;
+  padding: 3rem 0 3.2rem 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Atmospheric Background Radial Lighting */
+.te-neon-admissions-section::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: 15%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(19, 215, 255, 0.16) 0%, transparent 65%);
+  filter: blur(55px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.te-neon-admissions-section::after {
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  right: 10%;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(152, 88, 255, 0.18) 0%, transparent 70%);
+  filter: blur(65px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Badge Pill */
+.te-neon-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.28rem 0.85rem;
+  background: rgba(246, 195, 74, 0.08);
+  border: 1px solid rgba(246, 195, 74, 0.35);
+  border-radius: var(--te-radius-pill);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #F6C34A;
+  letter-spacing: 0.04em;
+  box-shadow: 0 0 14px rgba(246, 195, 74, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+/* Main Headline — Compact & Elegant */
+.te-neon-headline {
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.45rem;
+}
+
+.te-neon-gradient-text {
+  background: linear-gradient(90deg, #13D7FF 0%, #A855F7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+/* Gold Accent Curve Underline (as in Image 4) */
+.te-neon-gold-curve {
+  width: 95px;
+  height: 3px;
+  background: linear-gradient(90deg, #F6C34A 0%, rgba(246, 195, 74, 0) 100%);
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(246, 195, 74, 0.5);
+  margin-bottom: 0.85rem;
+}
+
+/* Description */
+.te-neon-description {
+  color: #CBD5E1;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  max-width: 540px;
+}
+
+/* Floating Glass Fee Cards — Compact */
+.te-neon-fee-card {
+  position: relative;
+  background: rgba(11, 37, 80, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 0.95rem 1.05rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow: hidden;
+}
+
+.te-neon-fee-card.violet-glow {
+  border: 1.5px solid rgba(168, 85, 247, 0.55);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35), 0 0 20px rgba(168, 85, 247, 0.18);
+}
+
+.te-neon-fee-card.cyan-glow {
+  border: 1.5px solid rgba(19, 215, 255, 0.55);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35), 0 0 20px rgba(19, 215, 255, 0.18);
+}
+
+.te-neon-fee-card:hover {
+  transform: translateY(-4px);
+}
+
+.te-neon-fee-card.violet-glow:hover {
+  border-color: rgba(168, 85, 247, 0.9);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 28px rgba(168, 85, 247, 0.35);
+}
+
+.te-neon-fee-card.cyan-glow:hover {
+  border-color: rgba(19, 215, 255, 0.9);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 28px rgba(19, 215, 255, 0.35);
+}
+
+.te-neon-card-icon-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.55rem;
+}
+
+.te-neon-card-icon-badge.violet {
+  background: rgba(168, 85, 247, 0.18);
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  color: #C084FC;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.3);
+}
+
+.te-neon-card-icon-badge.gold {
+  background: rgba(246, 195, 74, 0.18);
+  border: 1px solid rgba(246, 195, 74, 0.5);
+  color: #F6C34A;
+  box-shadow: 0 0 12px rgba(246, 195, 74, 0.3);
+}
+
+.te-neon-fee-label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #94A3B8;
+  margin-bottom: 0.15rem;
+}
+
+.te-neon-fee-amount {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.15rem;
+}
+
+.te-neon-fee-sub {
+  font-size: 0.72rem;
+  color: #94A3B8;
+}
+
+/* Neon CTA Buttons — Compact */
+.te-btn-neon-gold {
+  background: linear-gradient(135deg, #F6C34A 0%, #D97706 100%);
+  color: #07152E !important;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.52rem 1.25rem;
+  border-radius: var(--te-radius-pill);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 4px 16px rgba(246, 195, 74, 0.32), 0 0 20px rgba(246, 195, 74, 0.18);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.te-btn-neon-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(246, 195, 74, 0.45), 0 0 28px rgba(246, 195, 74, 0.3);
+  color: #07152E !important;
+}
+
+.te-btn-neon-blue {
+  background: rgba(11, 37, 80, 0.6);
+  color: #FFFFFF !important;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.52rem 1.2rem;
+  border-radius: var(--te-radius-pill);
+  border: 1px solid rgba(19, 215, 255, 0.45);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.te-btn-neon-blue:hover {
+  transform: translateY(-2px);
+  border-color: rgba(19, 215, 255, 0.85);
+  box-shadow: 0 6px 20px rgba(19, 215, 255, 0.25);
+  color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN: SIGNATURE FLOATING NEON GLASS ASSISTANCE PANEL (COMPACT)
+   ========================================================================== */
+.te-neon-panel-wrap {
+  position: relative;
+  z-index: 2;
+}
+
+/* Animated Neon Backlight Halo (12s loop) */
+.te-neon-backlight-halo {
+  position: absolute;
+  inset: -10px;
+  border-radius: 30px;
+  background: linear-gradient(
+    135deg,
+    rgba(19, 215, 255, 0.4) 0%,
+    rgba(152, 88, 255, 0.4) 50%,
+    rgba(19, 215, 255, 0.4) 100%
+  );
+  background-size: 300% 300%;
+  animation: neonGlowFlow 12s ease infinite;
+  filter: blur(24px);
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+@keyframes neonGlowFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Main Translucent Glass Panel — Compact */
+.te-neon-glass-panel {
+  position: relative;
+  background: rgba(8, 24, 56, 0.74);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 22px;
+  border: 1.5px solid rgba(19, 215, 255, 0.55);
+  padding: 1.4rem 1.6rem;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+/* Iconic Folded Neon Corner Ribbon (as in Image 4) */
+.te-neon-folded-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #13D7FF 0%, #A855F7 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.7);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.te-neon-active-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.65rem;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  border-radius: var(--te-radius-pill);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #34D399;
+}
+
+.te-neon-green-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 6px #10B981;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.te-neon-session-text {
+  font-size: 0.76rem;
+  color: #CBD5E1;
+  display: inline-flex;
+  align-items: center;
+}
+
+.te-neon-panel-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.text-cyan {
+  color: #13D7FF !important;
+}
+
+.te-neon-panel-desc {
+  color: #94A3B8;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+/* 3 Interactive Contact Cards — Compact */
+.te-neon-contact-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.85rem;
+  background: rgba(14, 38, 78, 0.65);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.te-neon-contact-card.blue:hover {
+  transform: translateY(-2px);
+  border-color: rgba(59, 130, 246, 0.7);
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.22);
+  background: rgba(14, 38, 78, 0.85);
+}
+
+.te-neon-contact-card.gold:hover {
+  transform: translateY(-2px);
+  border-color: rgba(246, 195, 74, 0.7);
+  box-shadow: 0 4px 14px rgba(246, 195, 74, 0.22);
+  background: rgba(14, 38, 78, 0.85);
+}
+
+.te-neon-contact-card.cyan:hover {
+  transform: translateY(-2px);
+  border-color: rgba(19, 215, 255, 0.7);
+  box-shadow: 0 4px 14px rgba(19, 215, 255, 0.22);
+  background: rgba(14, 38, 78, 0.85);
+}
+
+.te-neon-icon-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.te-neon-icon-box.blue {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.35);
+}
+
+.te-neon-icon-box.gold {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.35);
+}
+
+.te-neon-icon-box.cyan {
+  background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+  color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.35);
+}
+
+.te-neon-contact-label {
+  font-size: 0.68rem;
+  color: #94A3B8;
+  font-weight: 600;
+  margin-bottom: 1px;
+}
+
+.te-neon-contact-value {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.15;
+}
+
+.te-neon-arrow-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #CBD5E1;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.te-neon-contact-card:hover .te-neon-arrow-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  transform: translateX(3px);
+}
+
+/* WhatsApp Button — Compact */
+.te-btn-neon-whatsapp {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 0.86rem;
+  padding: 0.52rem 1.1rem;
+  border-radius: var(--te-radius-pill);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.32), 0 0 20px rgba(16, 185, 129, 0.2);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.te-btn-neon-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(16, 185, 129, 0.45), 0 0 28px rgba(16, 185, 129, 0.32);
+  color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   SEAL INFOTECH STYLE EXECUTIVE CARD DESIGN (IMAGE 2 REFERENCE)
+   ========================================================================== */
+.te-seal-exec-card {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 28px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 16px 45px rgba(11, 37, 69, 0.08);
+  overflow: hidden;
+  padding: 2.75rem 2.5rem;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.te-seal-exec-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 50px rgba(11, 37, 69, 0.12);
+}
+
+/* Background Subtle Dot Pattern in Image 2 Style */
+.te-seal-dot-pattern {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 140px;
+  height: 140px;
+  background-image: radial-gradient(#CBD5E1 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.te-seal-brand-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.9rem;
+  background: rgba(11, 37, 69, 0.05);
+  border: 1px solid rgba(11, 37, 69, 0.1);
+  border-radius: var(--te-radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--te-navy-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+}
+
+.te-seal-heading {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--te-navy-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  margin-bottom: 1.25rem;
+}
+
+.te-seal-quote-body {
+  font-size: 0.98rem;
+  line-height: 1.78;
+  color: #334155;
+  margin-bottom: 1.25rem;
+}
+
+.te-seal-quote-body p {
+  margin-bottom: 0.85rem;
+  color: #334155;
+}
+
+.te-seal-divider-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 1.25rem 0 0.85rem 0;
+}
+
+.te-seal-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--te-gold);
+}
+
+.te-seal-author-block {
+  margin-bottom: 1.5rem;
+}
+
+.te-seal-author-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--te-navy-dark);
+  margin-bottom: 2px;
+}
+
+.te-seal-author-desig {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--te-blue-accent);
+}
+
+.te-seal-author-school {
+  font-size: 0.82rem;
+  color: var(--te-text-muted);
+}
+
+/* SEAL Geometric Portrait Frame Column */
+.te-seal-portrait-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 440px;
+}
+
+/* Diagonal Geometric Ribbon */
+.te-seal-ribbon-bg {
+  position: absolute;
+  top: -5%;
+  right: -8%;
+  width: 115%;
+  height: 110%;
+  background: linear-gradient(135deg, rgba(29, 78, 216, 0.08) 0%, rgba(11, 37, 69, 0.12) 100%);
+  clip-path: polygon(35% 0%, 100% 0%, 100% 100%, 0% 100%);
+  border-radius: 28px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.te-seal-ribbon-bg.director-geo {
+  background: linear-gradient(135deg, rgba(214, 168, 76, 0.12) 0%, rgba(29, 78, 216, 0.08) 100%);
+  clip-path: polygon(0% 0%, 65% 0%, 100% 100%, 0% 100%);
+}
+
+.te-seal-photo-box {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 380px;
+  height: 450px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+  border: 4px solid #FFFFFF;
+  box-shadow: 0 16px 40px rgba(11, 37, 69, 0.15);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.te-seal-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+  transition: transform 0.4s ease;
+  padding: 8px;
+}
+
+.te-seal-photo-box.director-box img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.te-seal-photo-box:hover img {
+  transform: scale(1.025);
+}
+
+/* SEAL Contact Strip */
+.te-seal-contact-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #E2E8F0;
+  font-size: 0.85rem;
+}
+
+.te-seal-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+  color: #1E293B;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.te-seal-contact-link:hover {
+  color: var(--te-gold-hover);
+}
+
+.te-seal-icon-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--te-navy-dark);
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   SECTION E: CHAIRMAN MESSAGE (MAJOR UPGRADE)
+   ========================================================================== */
+.te-chairman-card-pro {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 32px 10px 32px 10px;
+  border: 1px solid var(--te-border);
+  box-shadow: var(--te-shadow-lg);
+  padding: 2.5rem 2.25rem;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  overflow: hidden;
+}
+
+.te-chairman-card-pro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--te-gold) 0%, #AF8313 50%, var(--te-navy-primary) 100%);
+}
+
+.te-chairman-card-pro:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--te-shadow-hover);
+  border-color: rgba(197, 155, 39, 0.45);
+}
+
+/* Required hover animation: subtle 2.5% font scaling without layout shifts */
+.te-chairman-text-pro {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--te-text-dark);
+  transition: transform var(--transition-normal), color var(--transition-normal);
+  transform-origin: left center;
+}
+
+.te-chairman-card-pro:hover .te-chairman-text-pro {
+  transform: scale(1.02);
+  color: #07172C;
+}
+
+/* Portrait Frame Upgrade */
+.te-portrait-frame-pro {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(11, 37, 69, 0.16);
+  border: 5px solid #FFFFFF;
+  background: linear-gradient(180deg, #F8FAFC 0%, #E2E8F0 100%);
+  height: 460px;
+  max-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.te-portrait-frame-pro:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 55px rgba(11, 37, 69, 0.25);
+}
+
+.te-portrait-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.te-portrait-img.ceo {
+  object-fit: contain;
+  object-position: top center;
+  padding: 10px;
+}
+
+/* ==========================================================================
+   SECTION F: DIRECTOR MESSAGE (MAJOR UPGRADE)
+   ========================================================================== */
+.te-director-card-pro {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 10px 32px 10px 32px;
+  border: 1px solid var(--te-border);
+  box-shadow: var(--te-shadow-lg);
+  padding: 2.5rem 2.25rem;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  overflow: hidden;
+}
+
+.te-director-card-pro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 7px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--te-blue-accent) 0%, var(--te-gold) 100%);
+}
+
+.te-director-card-pro:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--te-shadow-hover);
+  border-color: rgba(29, 78, 216, 0.4);
+}
+
+.te-director-portrait-frame {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(11, 37, 69, 0.16);
+  border: 5px solid #FFFFFF;
+  background: linear-gradient(180deg, #F8FAFC 0%, #E2E8F0 100%);
+  height: 460px;
+  max-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.te-director-portrait-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 55px rgba(11, 37, 69, 0.25);
+}
+
+.te-portrait-img.director {
+  object-fit: contain;
+  object-position: center;
+  padding: 8px;
+}
+
+/* Leadership Pillars */
+.te-pillar-badge {
+  padding: 0.85rem 1rem;
+  border-radius: var(--te-radius-md);
+  background: var(--te-bg-subtle);
+  border: 1px solid var(--te-border);
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.te-pillar-badge:hover {
+  background: #FFFFFF;
+  border-color: var(--te-gold);
+  transform: translateY(-2px);
+  box-shadow: var(--te-shadow-sm);
+}
+
+/* ==========================================================================
+   ACADEMIC PROGRAM CARDS (POLISHED)
+   ========================================================================== */
+.te-program-card-pro {
+  background: #FFFFFF;
+  border-radius: var(--te-radius-xl);
+  border: 1px solid var(--te-border);
+  overflow: hidden;
+  box-shadow: var(--te-shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.te-program-card-pro:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--te-shadow-hover);
+  border-color: rgba(29, 78, 216, 0.35);
+}
+
+.te-program-img-wrap-pro {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  background-color: var(--te-navy-dark);
+}
+
+.te-program-img-wrap-pro img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.te-program-card-pro:hover .te-program-img-wrap-pro img {
+  transform: scale(1.08);
+}
+
+/* ==========================================================================
+   PHOTO GALLERY & LIGHTBOX
+   ========================================================================== */
+.te-gallery-item {
+  position: relative;
+  border-radius: var(--te-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--te-shadow-sm);
+  background-color: var(--te-navy-dark);
+  cursor: pointer;
+  height: 270px;
+  border: 1px solid var(--te-border);
+}
+
+.te-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.te-gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(7, 23, 44, 0.92) 100%);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  color: #FFFFFF;
+  transition: opacity var(--transition-normal);
+}
+
+.te-gallery-item:hover .te-gallery-overlay {
+  opacity: 1;
+}
+
+.te-gallery-item:hover .te-gallery-img {
+  transform: scale(1.09);
+}
+
+/* Lightbox Modal */
+.te-lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 13, 24, 0.95);
+  backdrop-filter: blur(12px);
+  z-index: 1060;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.te-lightbox-content {
+  position: relative;
+  max-width: 1080px;
+  width: 100%;
+  text-align: center;
+}
+
+.te-lightbox-img {
+  max-height: 75vh;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: var(--te-radius-md);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
+  border: 3px solid rgba(255, 255, 255, 0.25);
+}
+
+/* ==========================================================================
+   HERO BANNER
+   ========================================================================== */
+.te-hero {
+  position: relative;
+  background: linear-gradient(135deg, #051427 0%, #0B2545 55%, #10335D 100%);
+  color: #FFFFFF;
+  padding: 5.5rem 0 6.5rem 0;
+  overflow: hidden;
+}
+
+.te-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(circle at 85% 20%, rgba(197, 155, 39, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 10% 80%, rgba(29, 78, 216, 0.18) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+.te-hero-badge-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--te-radius-pill);
+  padding: 0.4rem 1.15rem 0.4rem 0.5rem;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(8px);
+}
+
+.te-hero-badge-icon {
+  background: linear-gradient(135deg, var(--te-gold), #A97E15);
+  color: #FFFFFF;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.te-hero-title {
+  font-size: 3.35rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.025em;
+}
+
+.te-hero-subtitle {
+  font-size: 1.15rem;
+  color: #CBD5E1;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  max-width: 580px;
+}
+
+.te-hero-image-frame {
+  position: relative;
+  border-radius: var(--te-radius-xl);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  border: 4px solid rgba(255, 255, 255, 0.15);
+  background-color: var(--te-navy-dark);
+}
+
+.te-hero-image {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  object-position: center 35%;
+  transition: transform 0.6s ease;
+}
+
+.te-hero-image-frame:hover .te-hero-image {
+  transform: scale(1.02);
+}
+
+.te-hero-floating-card {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(7, 23, 44, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--te-radius-md);
+  padding: 1rem 1.25rem;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 25 Years Ribbon Strip */
+.te-anniversary-banner {
+  background: linear-gradient(90deg, #09203C 0%, #133E70 50%, #09203C 100%);
+  border-top: 1px solid rgba(197, 155, 39, 0.3);
+  border-bottom: 1px solid rgba(197, 155, 39, 0.3);
+  padding: 0.85rem 0;
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.te-footer {
+  background-color: var(--te-navy-dark);
+  color: #CBD5E1;
+  padding: 5rem 0 2rem 0;
+  border-top: 3px solid var(--te-gold);
+}
+
+.te-footer h5 {
+  color: #FFFFFF;
+  font-size: 1.15rem;
+  margin-bottom: 1.4rem;
+  position: relative;
+  padding-bottom: 0.65rem;
+}
+
+.te-footer h5::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 36px;
+  height: 2px;
+  background-color: var(--te-gold);
+}
+
+.te-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.te-footer-links li {
+  margin-bottom: 0.7rem;
+}
+
+.te-footer-links a {
+  color: #94A3B8;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all var(--transition-fast);
+}
+
+.te-footer-links a:hover {
+  color: #FFFFFF;
+  transform: translateX(4px);
+}
+
+.te-footer-bottom {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.88rem;
+  color: #94A3B8;
+}
+
+/* Floating Actions */
+.te-floating-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1040;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.te-floating-whatsapp:hover {
+  transform: scale(1.12);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.65);
+  color: #FFFFFF;
+}
+
+.te-back-to-top {
+  position: fixed;
+  bottom: 92px;
+  right: 28px;
+  z-index: 1040;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--te-navy-dark);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 20px rgba(7, 21, 46, 0.35);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.te-back-to-top:hover {
+  background-color: var(--te-gold);
+  color: var(--te-navy-dark);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(246, 195, 74, 0.45);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

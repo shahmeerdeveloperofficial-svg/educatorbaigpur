@@ -1,0 +1,261 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS & MOBILE NAVIGATION
+   Breakpoints: 1200px, 992px, 768px, 576px, 430px, 390px, 360px
+   ========================================================================== */
+
+/* Mobile Offcanvas Drawer */
+.te-mobile-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility var(--transition-normal);
+}
+
+.te-mobile-drawer.open {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.te-mobile-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(7, 23, 44, 0.65);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.te-mobile-drawer.open .te-mobile-backdrop {
+  opacity: 1;
+}
+
+.te-mobile-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 85vw;
+  background-color: #FFFFFF;
+  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
+}
+
+.te-mobile-drawer.open .te-mobile-panel {
+  transform: translateX(0);
+}
+
+.te-mobile-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--te-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.te-mobile-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.te-mobile-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  color: var(--te-navy-dark);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--te-radius-md);
+  margin-bottom: 0.35rem;
+  transition: all var(--transition-fast);
+}
+
+.te-mobile-link:hover, .te-mobile-link.active {
+  background-color: var(--te-blue-soft);
+  color: var(--te-blue-accent);
+}
+
+.te-mobile-footer {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--te-border);
+  background-color: var(--te-bg-subtle);
+}
+
+/* Tablets (max-width: 991px) */
+@media (max-width: 991.98px) {
+  .te-hero {
+    padding: 3.5rem 0 4.5rem 0;
+  }
+  
+  .te-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .te-hero-image {
+    height: 360px;
+  }
+  
+  .te-section-title-pro {
+    font-size: 2.1rem;
+  }
+
+  .te-chairman-card-pro,
+  .te-director-card-pro {
+    padding: 2.4rem 2rem;
+  }
+
+  .te-portrait-img {
+    height: 420px;
+  }
+  
+  .te-topbar .d-none-tablet {
+    display: none !important;
+  }
+}
+
+/* Mobile Devices (max-width: 767px) */
+@media (max-width: 767.98px) {
+  .te-hero {
+    padding: 2.5rem 0 3.5rem 0;
+    text-align: center;
+  }
+
+  .te-hero-title {
+    font-size: 2.15rem;
+  }
+
+  .te-hero-subtitle {
+    font-size: 1rem;
+    margin: 0 auto 1.75rem auto;
+  }
+
+  .te-hero-actions {
+    justify-content: center;
+  }
+
+  .te-hero-image-frame {
+    margin-top: 2rem;
+  }
+
+  .te-hero-image {
+    height: 280px;
+  }
+
+  .te-hero-floating-card {
+    position: static;
+    margin-top: 0.75rem;
+    border-radius: var(--te-radius-sm);
+  }
+
+  .te-section-title-pro {
+    font-size: 1.85rem;
+  }
+
+  .te-chairman-card-pro,
+  .te-director-card-pro {
+    padding: 1.85rem 1.4rem;
+  }
+
+  .te-facility-card-pro,
+  .te-circular-card-pro,
+  .te-dark-card-pro,
+  .te-admissions-support-card {
+    padding: 1.6rem 1.35rem;
+  }
+
+  .te-portrait-img {
+    height: 360px;
+  }
+
+  .te-seal-exec-card {
+    padding: 1.75rem 1.4rem;
+  }
+
+  .te-seal-heading {
+    font-size: 1.65rem;
+  }
+
+  .te-seal-photo-box {
+    height: 380px;
+    max-width: 100%;
+  }
+
+  .te-fee-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .te-rainbow-aura-wrap::before {
+    inset: -6px;
+    filter: blur(18px);
+  }
+
+  .te-floating-whatsapp {
+    bottom: 16px;
+    right: 16px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .te-back-to-top {
+    bottom: 74px;
+    right: 18px;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* Small Screens (max-width: 430px) */
+@media (max-width: 430px) {
+  .te-brand-title {
+    font-size: 1rem;
+  }
+
+  .te-brand-logo {
+    height: 42px;
+  }
+
+  .te-hero-title {
+    font-size: 1.85rem;
+  }
+
+  .te-section-title-pro {
+    font-size: 1.65rem;
+  }
+
+  .btn-te-primary,
+  .btn-te-gold,
+  .btn-te-outline,
+  .btn-te-outline-white {
+    width: 100%;
+    justify-content: center;
+    padding: 0.7rem 1.25rem;
+  }
+
+  .te-portrait-img {
+    height: 310px;
+  }
+
+  .te-fee-amount {
+    font-size: 1.8rem;
+  }
+}
+
+/* Extreme Small Screens (360px) */
+@media (max-width: 360px) {
+  .te-hero-title {
+    font-size: 1.65rem;
+  }
+
+  .te-section-title-pro {
+    font-size: 1.5rem;
+  }
+}
