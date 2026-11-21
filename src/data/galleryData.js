@@ -8,7 +8,7 @@ export const galleryPhotos = [
     src: "/assets/images/school-front-panoramic.webp",
     fallback: "/assets/images/school-front-panoramic.jpg",
     alt: "The Educators Prime Campus Baigpur full front view with green lawn and modern architecture",
-    caption: "Our purpose-built campus on Main GT Road, Baigpur, featuring spacious architecture, green grounds, and welcoming environment."
+    caption: "Our purpose-built campus Near Jogiwala Stop, Baigpur (Main Road Sheikhupura-Gujranwala, Nowshera Virkan), featuring spacious architecture, green grounds, and welcoming environment."
   },
   {
     id: "photo-2",

@@ -47,7 +47,7 @@ export default function ContactPage() {
       <PageHeader 
         badge="Connect with Us"
         title="Contact Campus Administration"
-        subtitle="We welcome parent visits, admission queries, and community inquiries on Main GT Road, Sheikhupura."
+        subtitle="We welcome parent visits, admission queries, and community inquiries Near Jogiwala Stop, Baigpur, Main Road Sheikhupura-Gujranwala, Nowshera Virkan."
         breadcrumbs={[{ label: "Contact Us", active: true }]}
       />
 
@@ -71,7 +71,7 @@ export default function ContactPage() {
                       {schoolInfo.address}
                     </p>
                     <span className="badge bg-warning text-dark mt-2" style={{ fontSize: "0.72rem" }}>
-                      Landmark: Near Jogiwala Stop
+                      Landmark: Near Jogiwala Stop, Nowshera Virkan
                     </span>
                   </div>
                 </div>
@@ -134,7 +134,7 @@ export default function ContactPage() {
                 />
                 <div className="p-3 bg-light">
                   <small className="text-muted d-block">
-                    Located conveniently on the Sheikhupura Main GT Road corridor.
+                    Located conveniently Near Jogiwala Stop, Baigpur on Main Road Sheikhupura-Gujranwala, Nowshera Virkan.
                   </small>
                 </div>
               </div>
@@ -259,7 +259,7 @@ export default function ContactPage() {
                     <strong className="text-dark">How to Reach Campus</strong>
                   </div>
                   <a 
-                    href="https://maps.google.com/?q=Sheikhupura+Main+GT+Road+Baigpur" 
+                    href="https://maps.google.com/?q=The+Educators+Prime+Campus+Baigpur+Jogiwala+Stop+Nowshera+Virkan" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="btn btn-sm btn-outline-primary d-inline-flex align-items-center gap-1"
@@ -270,8 +270,8 @@ export default function ContactPage() {
                 </div>
 
                 <p className="text-muted small mb-3">
-                  The campus is situated prominently on <strong>Main GT Road, Baigpur</strong>, right by 
-                  <strong> Jogiwala Stop</strong>, easily accessible via public transport, private cars, 
+                  The campus is situated prominently <strong>Near Jogiwala Stop, Baigpur</strong> on 
+                  <strong> Main Road Sheikhupura-Gujranwala, Nowshera Virkan</strong>, easily accessible via public transport, private cars, 
                   and our dedicated school pick-and-drop vans.
                 </p>
 
@@ -281,9 +281,9 @@ export default function ContactPage() {
                 >
                   <MapPin size={36} className="text-warning mb-2" />
                   <h5 className="fw-bold text-white mb-1">The Educators Prime Campus</h5>
-                  <span className="small text-light-50 mb-3">Near Jogiwala Stop, Baigpur, Sheikhupura</span>
+                  <span className="small text-light-50 mb-3">Near Jogiwala Stop, Baigpur, Main Road Sheikhupura-Gujranwala, Nowshera Virkan</span>
                   <a 
-                    href="https://maps.google.com/?q=Sheikhupura+Main+GT+Road+Baigpur" 
+                    href="https://maps.google.com/?q=The+Educators+Prime+Campus+Baigpur+Jogiwala+Stop+Nowshera+Virkan" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="btn btn-sm btn-warning fw-bold px-3"

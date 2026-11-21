@@ -48,8 +48,8 @@ export default function AboutPage() {
 
               <p className="text-muted mb-3">
                 At <strong>The Educators Prime Campus, Baigpur</strong>, we bring this prestigious educational legacy 
-                directly to the students and families of Sheikhupura. Established on a prime location near Jogiwala Stop, 
-                Main GT Road, our campus is designed as a purpose-built educational sanctuary where academic rigor, 
+                directly to the students and families of Nowshera Virkan and surrounding areas. Established on a prime location Near Jogiwala Stop, 
+                Baigpur (Main Road Sheikhupura-Gujranwala, Nowshera Virkan), our campus is designed as a purpose-built educational sanctuary where academic rigor, 
                 moral grounding, and character formation intersect seamlessly.
               </p>
 
@@ -77,7 +77,7 @@ export default function AboutPage() {
                 <div className="rounded-4 overflow-hidden shadow-lg border">
                   <img 
                     src="/assets/images/school-front-panoramic.webp" 
-                    alt="The Educators Campus Sheikhupura" 
+                    alt="The Educators Campus Baigpur, Nowshera Virkan" 
                     className="w-100 object-fit-cover"
                     style={{ minHeight: "420px" }}
                     onError={(e) => {
@@ -137,7 +137,7 @@ export default function AboutPage() {
                 <div className="te-gold-divider mb-4"></div>
 
                 <p className="text-secondary mb-4" style={{ fontSize: "1.05rem", lineHeight: "1.8" }}>
-                  To be the standard of educational excellence in Sheikhupura, nurturing an inclusive, 
+                  To be the standard of educational excellence in Nowshera Virkan and the surrounding region, nurturing an inclusive, 
                   disciplined, and intellectually vibrant community where every child's potential is unlocked 
                   and transformed into leadership, creativity, and purposeful contribution to society.
                 </p>

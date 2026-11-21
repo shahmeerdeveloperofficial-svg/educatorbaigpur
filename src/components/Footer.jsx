@@ -41,7 +41,7 @@ export default function Footer() {
 
             <p className="small text-light-50 mb-3" style={{ lineHeight: "1.7" }}>
               The Educators Prime Campus Baigpur delivers standard-setting education grounded in character building, 
-              academic rigor, moral integrity, and modern facilities on Main GT Road, Sheikhupura.
+              academic rigor, moral integrity, and modern facilities Near Jogiwala Stop, Baigpur, Main Road Sheikhupura-Gujranwala, Nowshera Virkan.
             </p>
 
             <div className="d-inline-flex align-items-center gap-2 p-2 px-3 rounded-3 bg-white bg-opacity-10 border border-white border-opacity-10">
@@ -152,7 +152,7 @@ export default function Footer() {
             </div>
             <div className="d-flex align-items-center gap-3">
               <span className="small text-light-50">
-                Official Campus Code • Main GT Road Sheikhupura
+                Official Campus Code • Nowshera Virkan
               </span>
             </div>
           </div>

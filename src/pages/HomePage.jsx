@@ -66,7 +66,7 @@ export default function HomePage() {
               <p className="te-hero-subtitle">
                 Welcome to <strong>{schoolInfo.name}</strong> ({schoolInfo.tagline}). 
                 Providing a world-class educational foundation from Pre-School to Matriculation 
-                with dedicated faculty and state-of-the-art campus on Main GT Road, Sheikhupura.
+                with dedicated faculty and state-of-the-art campus Near Jogiwala Stop, Baigpur, Main Road Sheikhupura-Gujranwala, Nowshera Virkan.
               </p>
 
               <div className="d-flex align-items-center gap-3 flex-wrap te-hero-actions">
@@ -214,7 +214,7 @@ export default function HomePage() {
                 badgeType="blue"
                 title="Empowering Young Minds with"
                 titleAccent="Knowledge & Moral Values"
-                description="The Educators Prime Campus, Baigpur brings Pakistan's premier educational benchmarks directly to Sheikhupura under the Beaconhouse umbrella."
+                description="The Educators Prime Campus, Baigpur brings Pakistan's premier educational benchmarks directly to Nowshera Virkan and surrounding areas under the Beaconhouse umbrella."
                 center={false}
               />
 
@@ -880,7 +880,7 @@ export default function HomePage() {
               {/* Refined Admissions Description */}
               <p className="te-neon-description mb-3">
                 Registrations are now open from Pre-School (Playgroup, Nursery, Prep) to Matriculation. 
-                Visit our campus on Main GT Road, Baigpur to obtain the prospectus and complete registration.
+                Visit our campus Near Jogiwala Stop, Baigpur (Main Road Sheikhupura-Gujranwala, Nowshera Virkan) to obtain the prospectus and complete registration.
               </p>
 
               {/* Two Premium Floating Glass Fee Cards (side-by-side) */}
@@ -992,7 +992,7 @@ export default function HomePage() {
                       </div>
                       <div className="flex-grow-1">
                         <div className="te-neon-contact-label">Campus Physical Location</div>
-                        <div className="te-neon-contact-value">{schoolInfo.shortAddress}</div>
+                        <div className="te-neon-contact-value">{schoolInfo.address}</div>
                       </div>
                       <div className="te-neon-arrow-btn">
                         <ArrowRight size={13} />
@@ -1043,7 +1043,7 @@ export default function HomePage() {
                 <MapPin size={22} />
               </div>
               <div>
-                <strong className="d-block text-dark small">Prime Location on Main GT Road</strong>
+                <strong className="d-block text-dark small">Prime Location Near Jogiwala Stop</strong>
                 <span className="text-muted small">{schoolInfo.address}</span>
               </div>
             </div>
