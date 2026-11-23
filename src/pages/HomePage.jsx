@@ -33,6 +33,7 @@ import {
   PhoneCall
 } from "lucide-react";
 import SectionHeading from "../components/SectionHeading";
+import RecentlyHeldEventsSection from "../components/RecentlyHeldEventsSection";
 import { schoolInfo, leadership, academicPrograms, facilitiesList, feeStructure } from "../data/schoolData";
 import { galleryPhotos } from "../data/galleryData";
 import { useSchool } from "../context/SchoolContext";
@@ -830,6 +831,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ====================================================================
+          10B. RECENTLY HELD EVENTS SECTION (SPEECH & DEBATE CHAMPIONSHIP & MILESTONES)
+          ==================================================================== */}
+      <RecentlyHeldEventsSection />
 
       {/* ====================================================================
           11. SECTION D: ADMISSIONS CTA & FEE SECTION (NEON GLASS REDESIGN — IMAGE 4)
