@@ -145,6 +145,54 @@ img {
 }
 
 /* ==========================================================================
+   SCHOOL MOTTO MOVING MARQUEE (RIGHT TO LEFT)
+   ========================================================================== */
+.te-motto-marquee-bar {
+  background: linear-gradient(90deg, #07152E 0%, #0F2B59 50%, #07152E 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 2px solid #F6C34A;
+  color: #FFFFFF;
+  padding: 0.35rem 0;
+  font-size: 0.85rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 1020;
+}
+
+.te-motto-label {
+  background: linear-gradient(135deg, #F6C34A, #D49C16);
+  color: #07152E;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.75rem;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(246, 195, 74, 0.3);
+  margin-right: 1rem;
+}
+
+.te-motto-marquee {
+  display: block;
+  width: 100%;
+  color: #F1F5F9;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.te-marquee-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.te-marquee-motto-highlight {
+  color: #F6C34A;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
    MAIN NAVBAR — COMPACT, SLIM, SINGLE-LINE DESKTOP LAYOUT
    ========================================================================== */
 .te-navbar {

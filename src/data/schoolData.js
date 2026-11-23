@@ -149,93 +149,111 @@ export const academicPrograms = [
 export const facilitiesList = [
   {
     id: "classrooms",
-    title: "Modern Classrooms",
-    category: "Academic",
+    title: "Modern Ergonomic Classrooms",
+    category: "Academic Infrastructure",
     icon: "BookOpen",
-    shortDesc: "Well-ventilated, well-lit, ergonomically designed classrooms equipped for modern interactive teaching.",
-    details: "Our classrooms provide an inspiring atmosphere with comfortable furniture, natural lighting, audio-visual readiness, and organized study spaces tailored to each grade level.",
-    image: "/assets/images/school-entrance-building.webp"
+    shortDesc: "Well-ventilated, solar-powered classrooms designed with ergonomic furniture for focused learning.",
+    details: "Our classrooms feature abundant natural lighting, comfortable individual student desks, modern whiteboards, and high ceilings that support an active and engaging academic environment.",
+    image: "/assets/images/events/midyear-exams-boys.webp"
+  },
+  {
+    id: "exam-halls",
+    title: "Standardized Examination & Assessment Halls",
+    category: "Academic Quality",
+    icon: "FileText",
+    shortDesc: "Strict Beaconhouse standard examination spaces ensuring academic rigor, comfort, and focus.",
+    details: "Mid-year and final assessments are conducted in quiet, organized, and vigilant testing halls that allow students to demonstrate their true academic potential with total integrity.",
+    image: "/assets/images/events/midyear-exams-girls.webp"
   },
   {
     id: "sports-playground",
-    title: "Sports & Playground",
-    category: "Campus Life",
+    title: "Lush Sports Ground & Athletics Arena",
+    category: "Physical Fitness",
     icon: "Trophy",
-    shortDesc: "Spacious green lawn and paved grounds for outdoor sports, morning assembly, and healthy physical play.",
-    details: "Physical fitness is central to our philosophy. Our campus features a lush green open field for sports, running, and physical training under teacher supervision.",
-    image: "/assets/images/school-lawn-playground.webp"
+    shortDesc: "Expansive green grounds for House competitions, Annual Sports Galas, cricket, and running tracks.",
+    details: "Sportsmanship and physical fitness are fostered on our maintained open-air field. Annual sports galas bring together student athletes competing under House banners.",
+    image: "/assets/images/events/sports-gala-champions.webp"
+  },
+  {
+    id: "speech-debate-society",
+    title: "Speech, Oratory & Debate Society",
+    category: "Elocution & Leadership",
+    icon: "Award",
+    shortDesc: "Coaching in English and Urdu public speaking, producing regional Cluster Level Champions.",
+    details: "Students receive regular mentorship in argumentative elocution, declamations, and bilingual speech, recently winning 1st Runner Up and 2nd Runner Up trophies at the 23rd Annual Cluster Level.",
+    image: "/assets/images/events/speech-debate-council.webp"
+  },
+  {
+    id: "first-aid-rescue",
+    title: "Rescue 1122 Certified First Aid & Safety",
+    category: "Health & Life Safety",
+    icon: "HeartPulse",
+    shortDesc: "Equipped medical first-aid post with staff and student scout corps trained by Rescue 1122 Punjab.",
+    details: "Practical CPR drills, disaster preparedness, and medical first-aid kits ensure a prompt response to any student health concern or physical emergency.",
+    image: "/assets/images/events/rescue-1122-safety-training.webp"
+  },
+  {
+    id: "teacher-development",
+    title: "Faculty Training & Pedagogy Development",
+    category: "Teaching Excellence",
+    icon: "Users",
+    shortDesc: "Continuous teacher training in 21st-century instructional design and interactive learning.",
+    details: "Our dedicated educators undergo continuous pedagogy workshops, peer reviews, and syllabus alignment sessions in accordance with Beaconhouse network benchmarks.",
+    image: "/assets/images/events/teacher-training-session.webp"
   },
   {
     id: "activity-room",
-    title: "Activity Room & Play Area",
-    category: "Campus Life",
+    title: "Pre-School Activity Zone & Play Area",
+    category: "Early Years",
     icon: "Smile",
-    shortDesc: "Colorful play area with climbing frames, slides, and swings specially designed for pre-school and early years.",
-    details: "Safe, child-friendly outdoor play apparatus where our youngest learners cultivate gross motor coordination, sharing, teamwork, and joyful outdoor memories.",
+    shortDesc: "Child-safe outdoor play equipment, slides, and sensory activity zones for Playgroup, Nursery, and Prep.",
+    details: "Specially designed outdoor apparatus where our youngest learners develop physical balance, gross motor skills, teamwork, and joyful early childhood memories.",
     image: "/assets/images/school-playarea-slides.webp"
-  },
-  {
-    id: "safety-security",
-    title: "Safety & Security",
-    category: "Safety",
-    icon: "ShieldCheck",
-    shortDesc: "24/7 campus CCTV surveillance, secure boundary walls, and dedicated security guards for peace of mind.",
-    details: "The safety of our students is paramount. The campus is secured with high perimeter fencing, monitored gate security, restricted visitor access, and trained staff.",
-    image: "/assets/images/school-campus-angle.webp"
   },
   {
     id: "solar-power",
     title: "Solar Powered Green Campus",
     category: "Infrastructure",
     icon: "Sun",
-    shortDesc: "Independent solar energy system ensuring uninterrupted electricity for fans, lights, and learning facilities.",
-    details: "To guarantee smooth academic continuity regardless of load shedding, our campus utilizes a modern solar power infrastructure, creating an eco-friendly learning environment.",
+    shortDesc: "Independent solar energy infrastructure ensuring 100% uninterrupted electricity for classrooms.",
+    details: "To guarantee smooth academic continuity regardless of seasonal load shedding, our campus utilizes a modern rooftop solar energy system, creating an eco-friendly sanctuary.",
     image: "/assets/images/school-front-panoramic.webp"
   },
   {
+    id: "transport",
+    title: "Safe Pick & Drop Transport Service",
+    category: "Student Services",
+    icon: "Bus",
+    shortDesc: "Reliable, monitored school transport vans covering Baigpur and surrounding routes on Main Road Sheikhupura-Gujranwala, Nowshera Virkan.",
+    details: "Convenient campus transport with verified drivers, assigned conductors, and designated neighborhood stops ensuring students commute safely and arrive punctually.",
+    image: "/assets/images/school-entrance-building.webp"
+  },
+  {
+    id: "safety-security",
+    title: "24/7 Security & CCTV Campus Surveillance",
+    category: "Campus Safety",
+    icon: "ShieldCheck",
+    shortDesc: "High perimeter walls, monitored entrance gates, and continuous CCTV surveillance.",
+    details: "The safety of every student is our primary obligation. We maintain controlled visitor access, gate guards, and round-the-clock video monitoring across the premises.",
+    image: "/assets/images/school-campus-angle.webp"
+  },
+  {
     id: "clean-water",
-    title: "Clean Drinking Water",
-    category: "Health",
+    title: "Multi-Stage Purified Drinking Water Plant",
+    category: "Student Health",
     icon: "Droplets",
-    shortDesc: "Multi-stage purified water filtration plant providing clean, safe, and cold drinking water for all students.",
-    details: "Health begins with pure water. Our filtration system undergoes routine quality checks to ensure 100% safe, hygienic drinking water for children and faculty.",
+    shortDesc: "Commercial-grade filtration plant providing 100% pure, cold, and tested drinking water.",
+    details: "Regular laboratory quality testing guarantees that clean, safe, and hygienic water is accessible to students and faculty across all break periods.",
     image: "/assets/images/school-lawn-playground.webp"
   },
   {
     id: "hygiene-washrooms",
-    title: "Hygiene & Modern Washrooms",
-    category: "Health",
+    title: "Sanitized & Modern Restrooms",
+    category: "Health & Hygiene",
     icon: "Sparkles",
-    shortDesc: "Clean, separate, well-sanitized washrooms for boys, girls, and staff with continuous cleaning cycles.",
-    details: "Strict hygiene protocols are maintained daily by our housekeeping team with liquid soap, clean running water, and sanitization after every break.",
+    shortDesc: "Separate, spotless, and continuously sanitized washrooms for boys, girls, and staff.",
+    details: "Strict sanitation schedules, liquid soap dispensers, and running water are maintained by our dedicated maintenance team after every class interval.",
     image: "/assets/images/school-entrance-building.webp"
-  },
-  {
-    id: "first-aid",
-    title: "First Aid & Health Care",
-    category: "Health",
-    icon: "HeartPulse",
-    shortDesc: "Equipped first-aid station and trained staff to handle emergencies and immediate medical needs.",
-    details: "We maintain a well-stocked medical kit, emergency contact protocols, and staff trained in first-aid response to attend to minor cuts, fever, or health concerns promptly.",
-    image: "/assets/images/school-playarea-slides.webp"
-  },
-  {
-    id: "transport",
-    title: "School Transport Facility",
-    category: "Services",
-    icon: "Bus",
-    shortDesc: "Safe, reliable pick-and-drop transport covering Baigpur and surrounding routes on Main Road Sheikhupura-Gujranwala, Nowshera Virkan.",
-    details: "Convenient transport service with vetted drivers and designated stops ensuring students arrive punctually and travel safely to and from home.",
-    image: "/assets/images/school-front-panoramic.webp"
-  },
-  {
-    id: "co-curricular",
-    title: "Co-Curricular & Creative Activities",
-    category: "Enrichment",
-    icon: "Palette",
-    shortDesc: "Regular speech competitions, arts exhibitions, science presentations, quiz bowls, and national celebrations.",
-    details: "Education beyond textbooks: students actively participate in Iqbal Day, Pakistan Day, sports galas, drawing competitions, and Islamic value weeks.",
-    image: "/assets/images/banner-25-years.webp"
   }
 ];
 

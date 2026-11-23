@@ -12,7 +12,10 @@ import {
   Bus, 
   Palette,
   ArrowRight,
-  GraduationCap
+  GraduationCap,
+  FileText,
+  Award,
+  Users
 } from "lucide-react";
 import PageHeader from "../components/PageHeader";
 import SectionHeading from "../components/SectionHeading";
@@ -34,6 +37,9 @@ export default function FacilitiesPage() {
       case "HeartPulse": return <HeartPulse size={28} />;
       case "Bus": return <Bus size={28} />;
       case "Palette": return <Palette size={28} />;
+      case "FileText": return <FileText size={28} />;
+      case "Award": return <Award size={28} />;
+      case "Users": return <Users size={28} />;
       default: return <Sparkles size={28} />;
     }
   };
@@ -43,7 +49,7 @@ export default function FacilitiesPage() {
       <PageHeader 
         badge="State-of-the-Art Infrastructure"
         title="Campus Facilities"
-        subtitle="10 purpose-built facilities engineered for health, safety, intellectual enrichment, and joyful learning."
+        subtitle="12 purpose-built facilities engineered for health, safety, intellectual enrichment, and joyful learning."
         breadcrumbs={[{ label: "Facilities", active: true }]}
       />
 

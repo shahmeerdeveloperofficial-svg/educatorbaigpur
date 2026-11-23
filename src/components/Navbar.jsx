@@ -119,6 +119,42 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* School Motto Moving Marquee Strip (Right to Left) */}
+      <div className="te-motto-marquee-bar">
+        <div className="container-fluid px-3 px-xl-4 px-xxl-5 d-flex align-items-center">
+          <div className="te-motto-label flex-shrink-0 d-none d-md-flex align-items-center gap-1">
+            <Sparkles size={12} className="text-dark" />
+            <span>School Motto:</span>
+          </div>
+          <div className="flex-grow-1 overflow-hidden">
+            <marquee 
+              direction="left" 
+              behavior="scroll" 
+              scrollamount="6"
+              onMouseEnter={(e) => e.target.stop()}
+              onMouseLeave={(e) => e.target.start()}
+              className="te-motto-marquee mb-0"
+            >
+              <span className="te-marquee-text">
+                <span>✨ <strong>SCHOOL MOTTO:</strong> <span className="te-marquee-motto-highlight">{schoolInfo.motto}</span></span>
+                <span>•</span>
+                <span>🏫 <strong>THE EDUCATORS PRIME CAMPUS BAIGPUR</strong> — A Project of Beaconhouse</span>
+                <span>•</span>
+                <span>🏅 <strong>Celebrating 25 Years of Nation Building (2002 – 2027)</strong></span>
+                <span>•</span>
+                <span>🏆 <strong>23rd Annual Cluster Level Speech & Debate Champions</strong> (1st Runner Up & 2nd Runner Up)</span>
+                <span>•</span>
+                <span>🎒 <strong>Admissions Open for Session 2026–2027</strong> (Pre-School to Matriculation)</span>
+                <span>•</span>
+                <span>📍 <strong>Location:</strong> {schoolInfo.address}</span>
+                <span>•</span>
+                <span>☀️ <strong>Campus Facilities:</strong> Solar Powered Green Campus • Safe Transport • Standardized Exam Halls • Sports Grounds</span>
+              </span>
+            </marquee>
+          </div>
+        </div>
+      </div>
+
       {/* Main Navbar */}
       <nav className={`te-navbar ${isScrolled ? "scrolled" : ""}`}>
         <div className="container-fluid px-3 px-xl-4 px-xxl-5">
